@@ -136,6 +136,23 @@ struct coredump_cmd_copy_arg {
 #define	COREDUMP_MEM_HDR_ID		'M'
 #define COREDUMP_MEM_HDR_VER		1
 
+/**
+ * Define default COREDUMP_ strings as public to allow coredump_backend_other to
+ * re-use these strings if necessary
+ */
+#ifndef COREDUMP_BEGIN_STR
+#define COREDUMP_BEGIN_STR      "BEGIN#"
+#endif /* COREDUMP_BEGIN_STR */
+#ifndef COREDUMP_END_STR
+#define COREDUMP_END_STR        "END#"
+#endif /* COREDUMP_END_STR */
+#ifndef COREDUMP_ERROR_STR
+#define COREDUMP_ERROR_STR      "ERROR CANNOT DUMP#"
+#endif /* COREDUMP_ERROR_STR */
+#ifndef COREDUMP_PREFIX_STR
+#define COREDUMP_PREFIX_STR     "#CD:"
+#endif /* COREDUMP_PREFIX_STR */
+
 /* Target code */
 enum coredump_tgt_code {
 	COREDUMP_TGT_UNKNOWN = 0,
